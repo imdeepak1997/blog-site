@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "199fcc1f-1b38-4807-a1a5-32155edfa4d1",
+		"name": "Blogs'",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38376832"
+	},
+	"item": [
+		{
+			"name": "GetAllBlogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/blogs/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"blogs",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateBlogs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \r\n        \"name\": \"User Entity: Defines the User entity with fields for id, username, and email.\",\r\n        \"category\": \"Battery life has also improved significantly, with some laptops lasting over 15 hours on a single charge, ideal for those on the go. Additionally, lightweight designs make these laptops highly portable\",\r\n        \"article\": \"the latest laptops are transforming productivity and creativity with their cutting-edge features and sleek designs. Powered by Intel's 13th Gen processors or AMD Ryzen 7000 series, these devices offer exceptional speed and multitasking capabilities. Many models now boast OLED displays, providing vivid colors and deep contrasts, perfect for both work and entertainment. Battery life has also improved significantly, with some laptops lasting over 15 hours on a single charge, ideal for those on the go. Additionally, lightweight designs make these laptops highly portable, without sacrificing performance. Many come equipped with fast-charging capabilities, delivering hours of usage in just minutes.Advanced features like Thunderbolt 4, Wi-Fi 6E, and enhanced cooling systems cater to power users, gamers, and professionals alike. With a focus on sustainability, several manufacturers are incorporating recycled materials, reducing their environmental impact. The latest laptops blend power, portability, and innovation, setting a new standard for mobile computing.\",\r\n        \"author\": \"Rahul\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/blogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchWithCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/blogs/info/laptop",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"blogs",
+						"info",
+						"laptop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchWithDateRange",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/blogs/get/game/2024-09-11/2024-09-17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"blogs",
+						"get",
+						"game",
+						"2024-09-11",
+						"2024-09-17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByAuthorName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/blogs/info/author/rahul",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"blogs",
+						"info",
+						"author",
+						"rahul"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "4bde6f9c-6665-4ebb-8046-553b3ce817e4",
+		"name": "USers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38376832"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"email\":\"deepak@gmail.com\",\r\n    \"pwd\":\"deepak\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZWVwYWtAZ21haWwuY29tIiwiaWF0IjoxNzI2NjUyMzQ0LCJleHAiOjE3MjY3Mzg3NDR9._kpdGNk0Ea_YvHmqdakiBIvdtJcZHN4c79GsLw71xJo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/getall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteBlogByUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZWVwYWtAZ21haWwuY29tIiwiaWF0IjoxNzI2NjQ5NjEyLCJleHAiOjE3MjY3MzYwMTJ9.l61_k9qDuFMkWhA5mvi7zOcCJKzwZUjLdtiWdvb4jjY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/delete/deepak",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"delete",
+						"deepak"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateBlogByUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZWVwYWtAZ21haWwuY29tIiwiaWF0IjoxNzI2NjUzMDAwLCJleHAiOjE3MjY3Mzk0MDB9.109t4f3LzXbyLjxISwU9-8s4u-NCU-rk8WSfeYPNFOI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \r\n        \"name\": \"User Entity: Defines the User entity with fields for id, username, and email.\",\r\n        \"category\": \"Battery life has also improved significantly, with some laptops lasting over 15 hours on a single charge, ideal for those on the go. Additionally, lightweight designs make these laptops highly portable\",\r\n        \"article\": \"the latest laptops are transforming productivity and creativity with their cutting-edge features and sleek designs. Powered by Intel's 13th Gen processors or AMD Ryzen 7000 series, these devices offer exceptional speed and multitasking capabilities. Many models now boast OLED displays, providing vivid colors and deep contrasts, perfect for both work and entertainment. Battery life has also improved significantly, with some laptops lasting over 15 hours on a single charge, ideal for those on the go. Additionally, lightweight designs make these laptops highly portable, without sacrificing performance. Many come equipped with fast-charging capabilities, delivering hours of usage in just minutes.Advanced features like Thunderbolt 4, Wi-Fi 6E, and enhanced cooling systems cater to power users, gamers, and professionals alike. With a focus on sustainability, several manufacturers are incorporating recycled materials, reducing their environmental impact. The latest laptops blend power, portability, and innovation, setting a new standard for mobile computing.\",\r\n        \"author\": \"Rahul\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/blogs/add/deepak@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"blogs",
+						"add",
+						"deepak@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBlogsByAuthor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZWVwYWtAZ21haWwuY29tIiwiaWF0IjoxNzI2NjUzNjY4LCJleHAiOjE3MjY3NDAwNjh9.ss6MvqtQ3NzUvBdMmKMwE8OaWbyxC_LOEJPJ7FSP0qs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/deepak@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"deepak@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"RahKul\",\r\n    \"email\":\"Rdahul@gmail.com\",\r\n    \"pwd\":\"12456781\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
