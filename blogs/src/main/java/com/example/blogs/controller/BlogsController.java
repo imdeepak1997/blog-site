@@ -3,6 +3,9 @@ package com.example.blogs.controller;
 import com.example.blogs.model.Blog;
 import com.example.blogs.repository.SearchRepository;
 import com.example.blogs.service.BlogsService;
+import org.apache.tomcat.util.json.JSONParser;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +19,7 @@ import java.util.List;
 @RestController
 public class BlogsController {
 
+    private static final Logger log = LoggerFactory.getLogger(BlogsController.class);
     @Autowired
     BlogsService blogsService;
 
@@ -52,12 +56,20 @@ public class BlogsController {
     }
 
     @GetMapping("/blogs/get/{category}/{fromDate}/{toDate}")
-    public ResponseEntity<List<Blog>> searchByCategoryAndTimeRange(@PathVariable String category, @PathVariable String fromDate, @PathVariable String toDate) throws ParseException {
+    public ResponseEntity<Object> searchByCategoryAndTimeRange(@PathVariable String category, @PathVariable String fromDate, @PathVariable String toDate) throws ParseException {
         if(category.isEmpty()){
             return ResponseEntity.unprocessableEntity().build();
         }
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        List<Blog> blogs = srepo.findByCategoryAndTimeRange(category, formatter.parse(fromDate),formatter.parse(toDate));
+        Date fDate,tDate;
+        try{
+            fDate = formatter.parse(fromDate);
+            tDate = formatter.parse(toDate);
+        }catch (ParseException e){
+            log.error(e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+        List<Blog> blogs = srepo.findByCategoryAndTimeRange(category, fDate,tDate);
         return ResponseEntity.status(200).body(blogs);
     }
 }

@@ -50,12 +50,6 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @DeleteMapping("delete/{blogname}")
-    public List<Blogs> deleteByBlogname(@PathVariable String blogname) {
-        List<Blogs> blogs=  blogsInterface.getAll().getBody();
-        return blogs;
-    }
-
     @PostMapping("/blogs/add/{authorname}")
     public ResponseEntity<String> addBlog(@RequestBody Blogs blogs, @PathVariable String authorname) {
         blogs.setAuthor(authorname);
